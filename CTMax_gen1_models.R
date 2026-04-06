@@ -154,11 +154,4 @@ hist(resid(null))
 anova(m,null)
 
 
-### Generalized linear mixed models 
-
-m <- glmmTMB(CTMax_Temp ~ GenTrt+(1|YSI)+(1|zMass)+(1|Sex)+(1|Trial)+(1|Cup)+(1|OriginalLin/Family), data=ctmax)
-summary(m)
-
-emmeans(m, pairwise~GenTrt)
-
 
