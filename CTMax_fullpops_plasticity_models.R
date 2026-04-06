@@ -71,6 +71,9 @@ summary(heat_null)
 AIC(heat_null)
 
 anova(heat, heat_null)
+plot_redres(heat, type = "std_cond")
+plot_resqq(heat)
+plot_ranef(heat)
 
 
 norm<- lmer(CTMax ~ Evo_treatment+(1|zMass)+(1|Sex)+(1|Continuous_Trial_Number)+(1|CTMax_filter)+(1|daysintank), data=ctmax_norm)
@@ -84,7 +87,6 @@ AIC(norm_null)
 anova(norm, norm_null)
 
 
-### Comparing null models from both heated and unheated treatments
-
-anova(heat_null, norm_null)
-
+plot_redres(norm, type = "std_cond")
+plot_resqq(norm)
+plot_ranef(norm)
